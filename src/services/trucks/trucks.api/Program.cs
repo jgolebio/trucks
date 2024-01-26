@@ -11,8 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<TrucksDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("TrucksDbConnectionString"),
-    sqlServerActions => sqlServerActions.MigrationsAssembly("trucks.infrastructure.sqlmigration")));
+builder.Services.AddDbContext<TrucksDbContext>(o =>
+{
+    o.UseSqlServer(builder.Configuration.GetConnectionString("TrucksDbConnectionString"),
+        sqlServerActions => sqlServerActions.MigrationsAssembly("trucks.infrastructure.sqlmigration"));
+    o.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
 builder.Services.ConfigureServices();
 builder.Services.ConfigureDatabaseServices();
 

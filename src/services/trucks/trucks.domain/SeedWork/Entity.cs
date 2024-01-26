@@ -5,8 +5,8 @@ namespace Trucks.domain.SeedWork;
 public abstract class Entity
 {
     int? _requestedHashCode;
-    Guid _Id;
-    public virtual Guid Id
+    IdValueObject _Id;
+    public virtual IdValueObject Id
     {
         get
         {
@@ -14,7 +14,7 @@ public abstract class Entity
         }
     }
 
-    public Entity(Guid id)
+    public Entity(IdValueObject id)
     {
         _domainEvents = new();
         _Id = id;

@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using trucks.domain.SeedWork;
 using Trucks.domain.Trucks;
-using Trucks.domain.Trucks.DbSnapshots;
 using Trucks.Infrastructure.Sql.DbModels.Converters;
 
 namespace Trucks.Infrastructure.Sql.Repositories
@@ -18,25 +17,35 @@ namespace Trucks.Infrastructure.Sql.Repositories
 
         public IUnitOfWork UnitOfWork => _dbContext;
 
-        public void Add(TruckDbSnapshot dbSnapshot)
+        public void Add(Truck model)
         {
-            _dbContext.Trucks.Add(dbSnapshot.ToDbModel());
+            _dbContext.Trucks.Add(model.ToDbSnapshot().ToDbModel());
         }
 
-        public async Task<Result<TruckDbSnapshot>> GetAsync(Guid truckId)
+        public void Delete(Truck model)
+        {
+            _dbContext.Trucks.Remove(model.ToDbSnapshot().ToDbModel());
+        }
+
+        public async Task<Result<Truck>> GetAsync(Guid truckId, CancellationToken cancellationToken)
         {
             try
             {
-                var dbModel = await _dbContext.Trucks.FirstOrDefaultAsync(x => x.Id == truckId);
+                var dbModel = await _dbContext.Trucks.FirstOrDefaultAsync(x => x.Id == truckId, cancellationToken);
                 if (dbModel is null)
                     return Result.Fail("Not found");
 
-                return dbModel.ToSnapshot();
+                return Truck.CreateFromDbSnapshot(dbModel.ToSnapshot());
             }
             catch (Exception ex)
             {
                 return Result.Fail(ex.Message);
             }
+        }
+
+        public void Update(Truck model)
+        {
+            _dbContext.Trucks.Update(model.ToDbSnapshot().ToDbModel());
         }
     }
 }

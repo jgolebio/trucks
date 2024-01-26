@@ -1,7 +1,6 @@
 ﻿using FluentResults;
 using MediatR;
 using Trucks.domain.Trucks;
-using Trucks.Infrastructure.Sql.Repositories;
 
 namespace Trucks.application.Commands
 {
@@ -14,17 +13,16 @@ namespace Trucks.application.Commands
             _trucksRepository = trucksRepository;
         }
 
-        public async Task<Result<CreateTruckCommand.CreateTruckResult>> Handle(CreateTruckCommand request, CancellationToken cancellationToken)
+        public Task<Result<CreateTruckCommand.CreateTruckResult>> Handle(CreateTruckCommand request, CancellationToken cancellationToken)
         {
-            await Task.Delay(1);
-
-            var createTruckRes = Truck.Create(request.Payload.Code, request.Payload.Name, request.Payload.Description);
+            var createTruckRes = Truck.Create(Guid.NewGuid(), request.Payload.Code, request.Payload.Name, request.Payload.Description);
             if (createTruckRes.IsFailed)
-                return createTruckRes.ToResult();
+                return Task.FromResult<Result<CreateTruckCommand.CreateTruckResult>>(createTruckRes.ToResult());
 
-            _trucksRepository.Add(createTruckRes.Value.ToDbSnapshot());
+            _trucksRepository.Add(createTruckRes.Value);
 
-            return Result.Ok(new CreateTruckCommand.CreateTruckResult(createTruckRes.Value.Id, "Truck created sucessfully"));
+            return Task.FromResult<Result<CreateTruckCommand.CreateTruckResult>>(Result.Ok(
+                new CreateTruckCommand.CreateTruckResult(createTruckRes.Value.Id.Value, "Truck created sucessfully")));
         }
     }
 }

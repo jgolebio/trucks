@@ -1,12 +1,13 @@
 ﻿using FluentResults;
 using trucks.domain.SeedWork;
-using Trucks.domain.Trucks.DbSnapshots;
 
 namespace Trucks.domain.Trucks
 {
     public interface ITrucksRepository : IRepository<Truck>
     {
-        public void Add(TruckDbSnapshot dbSnapshot);
-        public Task<Result<TruckDbSnapshot>> GetAsync(Guid truckId);
+        public void Add(Truck model);
+        void Delete(Truck model);
+        public Task<Result<Truck>> GetAsync(Guid truckId, CancellationToken cancellationToken);
+        void Update(Truck model);
     }
 }
