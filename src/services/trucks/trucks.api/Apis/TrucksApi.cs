@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
-using trucks.application.Commands;
+using Trucks.application.Commands;
 
-namespace trucks.api.Apis
+namespace Trucks.api.Apis
 {
     public static class TrucksApi
     {

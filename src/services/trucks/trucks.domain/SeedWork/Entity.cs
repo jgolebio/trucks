@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace trucks.domain.SeedWork;
+namespace Trucks.domain.SeedWork;
 
 public abstract class Entity
 {

@@ -1,0 +1,5 @@
+﻿Initial migration:
+dotnet ef migrations add InitialCreate --context TrucksDbContext --output-dir Migrations --verbose
+
+New migration:
+dotnet ef migrations add [MigrationName] --context TrucksDbContext --output-dir Migrations --verbose

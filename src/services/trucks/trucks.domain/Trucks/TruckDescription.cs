@@ -1,7 +1,7 @@
 ﻿using FluentResults;
-using trucks.domain.SeedWork;
+using Trucks.domain.SeedWork;
 
-namespace trucks.domain.Trucks;
+namespace Trucks.domain.Trucks;
 
 public class TruckDescription : ValueObject
 {

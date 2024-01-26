@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trucks.infrastructure.sql",
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trucks.infrastructure.sqlmigration", "services\trucks\trucks.infrastructure.sqlmigration\trucks.infrastructure.sqlmigration.csproj", "{4009D461-6C7E-4545-8C8D-17EA99D7FC08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{83BA2C78-5E60-4965-A1F8-C15ABA98B8D8} = {511189AD-D929-4815-9D75-6480EB464206}
 		{94EB19C5-7050-4DEF-A4C2-7429DB792F0F} = {511189AD-D929-4815-9D75-6480EB464206}
 		{4DD87A68-900A-4B92-971E-CD722987C911} = {511189AD-D929-4815-9D75-6480EB464206}
+		{4009D461-6C7E-4545-8C8D-17EA99D7FC08} = {511189AD-D929-4815-9D75-6480EB464206}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E990726F-16D7-49CD-A3A5-03D1FF5C27B4}

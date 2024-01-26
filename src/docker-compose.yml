@@ -15,3 +15,5 @@ services:
     build:
       context: .
       dockerfile: services/trucks/trucks.api/Dockerfile
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false

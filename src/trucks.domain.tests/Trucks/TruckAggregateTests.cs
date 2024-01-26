@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
-using trucks.domain.Trucks;
+using Trucks.domain.Trucks;
 
-namespace trucks.domain.unittests.Trucks;
+namespace Trucks.domain.unittests.Trucks;
 
 public class TruckAggregateTests
 {

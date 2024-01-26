@@ -1,7 +1,8 @@
 ﻿using FluentResults;
-using trucks.domain.SeedWork;
+using Trucks.domain.SeedWork;
+using Trucks.domain.Trucks.DbSnapshots;
 
-namespace trucks.domain.Trucks;
+namespace Trucks.domain.Trucks;
 
 public class Truck : Entity, IAggregateRoot
 {
@@ -86,4 +87,7 @@ public class Truck : Entity, IAggregateRoot
 
         return Result.Ok(this);
     }
+
+    public TruckDbSnapshot ToDbSnapshot() =>
+        new TruckDbSnapshot(Id, Code.Value, Name.Value, Description.Value, Status.Id);
 }

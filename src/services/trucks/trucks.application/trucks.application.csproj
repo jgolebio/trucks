@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\trucks.domain\trucks.domain.csproj" />
+    <ProjectReference Include="..\trucks.infrastructure.sql\trucks.infrastructure.sql.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace trucks.api.Apis
+namespace Trucks.api.Apis
 {
     public class TrucksService(IMediator mediator)
     {

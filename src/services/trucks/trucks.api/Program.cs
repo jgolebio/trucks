@@ -1,5 +1,9 @@
-using trucks.api.Apis;
+using Microsoft.EntityFrameworkCore;
+using trucks.api.Extensions;
 using trucks.api.IoC;
+using Trucks.api.Apis;
+using Trucks.api.IoC;
+using Trucks.Infrastructure.Sql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<TrucksDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("TrucksDbConnectionString"),
+    sqlServerActions => sqlServerActions.MigrationsAssembly("trucks.infrastructure.sqlmigration")));
 builder.Services.ConfigureServices();
+builder.Services.ConfigureDatabaseServices();
 
 var app = builder.Build();
 
@@ -18,6 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.Services.RunDatabaseMigrations();
 app.UseHttpsRedirection();
 
 app.MapGroup("api/v1/trucks")
