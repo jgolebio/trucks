@@ -1,4 +1,5 @@
 ﻿using Trucks.domain.Trucks;
+using Trucks.Infrastructure.Sql.Queries;
 using Trucks.Infrastructure.Sql.Repositories;
 
 namespace trucks.api.IoC
@@ -8,6 +9,7 @@ namespace trucks.api.IoC
         public static void ConfigureDatabaseServices(this IServiceCollection services)
         {
             services.AddScoped<ITrucksRepository, TrucksRepository>();
+            services.AddScoped<ITrucksQueries, TrucksQueries>();
         }
     }
 }

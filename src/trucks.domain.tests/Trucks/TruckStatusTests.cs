@@ -225,6 +225,6 @@ namespace Trucks.domain.unittests.Trucks
             result.Value.Status.Id.Should().Be(TruckStatus.OutOfServiceStatus.Id);
         }
 
-        private Truck CreateTruckWithOutOfServiceStatus(string code) => Truck.Create(code, "TestTruck", string.Empty).Value;
+        private Truck CreateTruckWithOutOfServiceStatus(string code) => Truck.Create(Guid.NewGuid(), code, "TestTruck", string.Empty).Value;
     }
 }

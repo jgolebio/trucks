@@ -1,9 +1,10 @@
 ﻿using FluentResults;
 using MediatR;
+using trucks.application.Behaviors;
 
 namespace trucks.application.Commands;
 
-public class StartLoadingCommand : IRequest<Result>
+public class StartLoadingCommand : BaseCommand, IRequest<Result>
 {
     public Guid TruckId { get; }
 

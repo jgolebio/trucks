@@ -1,9 +1,10 @@
 ﻿using FluentResults;
 using MediatR;
+using trucks.application.Behaviors;
 
 namespace Trucks.application.Commands;
 
-public class CreateTruckCommand : IRequest<Result<CreateTruckCommand.CreateTruckResult>>
+public class CreateTruckCommand : BaseCommand, IRequest<Result<CreateTruckCommand.CreateTruckResult>>
 {
     public record CreateTruckResult(Guid Id, string Message);
     public record CreateTruckRequest(string Code, string Name, string Description)

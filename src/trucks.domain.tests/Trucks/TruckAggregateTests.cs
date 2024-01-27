@@ -9,7 +9,7 @@ public class TruckAggregateTests
     public void Create_ShouldCreate_Properly()
     {
         //act
-        var result = Truck.Create("AAA999", "testOne", "");
+        var result = Truck.Create(Guid.NewGuid(), "AAA999", "testOne", "");
 
         //assert
         result.IsSuccess.Should().BeTrue();

@@ -1,9 +1,10 @@
 ﻿using FluentResults;
 using MediatR;
+using trucks.application.Behaviors;
 
 namespace trucks.application.Commands;
 
-public class UpdateTruckCommand : IRequest<Result>
+public class UpdateTruckCommand : BaseCommand, IRequest<Result>
 {
     public record UpdtaeTruckRequest(string Code, string Name, string Description);
 

@@ -1,9 +1,10 @@
 ﻿using FluentResults;
 using MediatR;
+using trucks.application.Behaviors;
 
 namespace trucks.application.Commands;
 
-public class DeleteTruckCommand : IRequest<Result>
+public class DeleteTruckCommand : BaseCommand, IRequest<Result>
 {
     public Guid TruckId { get; }
 
