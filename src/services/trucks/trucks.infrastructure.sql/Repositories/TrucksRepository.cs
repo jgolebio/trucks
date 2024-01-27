@@ -1,4 +1,4 @@
-﻿using FluentResults;
+﻿ using FluentResults;
 using Microsoft.EntityFrameworkCore;
 using trucks.domain.SeedWork;
 using Trucks.domain.Trucks;

@@ -1,4 +1,5 @@
 ﻿using FluentResults;
+using trucks.domain.Events;
 using Trucks.domain.SeedWork;
 using Trucks.domain.Trucks.DbSnapshots;
 
@@ -30,6 +31,7 @@ public class Truck : Entity, IAggregateRoot
             return mergedRes;
 
         var instance = new Truck(truckIdRes.Value, codeRes.Value, nameRes.Value, descriptionRes.Value, status);
+        instance.AddTruckCreateDomainEvent();
 
         return Result.Ok(instance);
     }
@@ -61,6 +63,7 @@ public class Truck : Entity, IAggregateRoot
             return result.ToResult();
 
         Status = result.Value;
+        PublishStartLoadingDomainEvent(DateTime.UtcNow);
 
         return Result.Ok(this);
     }
@@ -72,6 +75,7 @@ public class Truck : Entity, IAggregateRoot
             return result.ToResult();
 
         Status = result.Value;
+        PublishSendToJobDomainEvent(DateTime.UtcNow);
 
         return Result.Ok(this);
     }
@@ -83,6 +87,7 @@ public class Truck : Entity, IAggregateRoot
             return result.ToResult();
 
         Status = result.Value;
+        PublishNotifyAtJobDomainEvent(DateTime.UtcNow);
 
         return Result.Ok(this);
     }
@@ -94,6 +99,7 @@ public class Truck : Entity, IAggregateRoot
             return result.ToResult();
 
         Status = result.Value;
+        PublishReturnDomainEvent(DateTime.UtcNow);
 
         return Result.Ok(this);
     }
@@ -105,9 +111,33 @@ public class Truck : Entity, IAggregateRoot
             return result.ToResult();
 
         Status = result.Value;
+        PublishOutOfServiceDomainEvent(DateTime.UtcNow);
 
         return Result.Ok(this);
     }
+
+    public void AddTruckCreateDomainEvent()
+    {
+        var truckCreated = new TruckCreatedDomainEvent(Id.Value, Code.Value, Name.Value, Description.Value, Status.Id, Status.Name,
+            DateTime.UtcNow);
+
+        AddDomainEvent(truckCreated);
+    }
+
+    public void PublishStartLoadingDomainEvent(DateTime eventDate) =>
+        AddDomainEvent(new LoadingStartedDomainEvent(Id.Value, eventDate, Status.Id, Status.Name));
+
+    public void PublishSendToJobDomainEvent(DateTime eventDate) =>
+        AddDomainEvent(new SentToJobDomainEvent(Id.Value, eventDate, Status.Id, Status.Name));
+
+    public void PublishNotifyAtJobDomainEvent(DateTime eventDate) =>
+        AddDomainEvent(new NotifiedAtJobDomainEvent(Id.Value, eventDate, Status.Id, Status.Name));
+
+    public void PublishReturnDomainEvent(DateTime eventDate) =>
+        AddDomainEvent(new ReturnedDomainEvent(Id.Value, eventDate, Status.Id, Status.Name));
+
+    public void PublishOutOfServiceDomainEvent(DateTime eventDate) =>
+        AddDomainEvent(new WentOutOfServiceDomainEvent(Id.Value, eventDate, Status.Id, Status.Name));
 
     public TruckDbSnapshot ToDbSnapshot() =>
         new TruckDbSnapshot(Id.Value, Code.Value, Name.Value, Description.Value, Status.Id);

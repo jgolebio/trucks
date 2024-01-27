@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using trucks.domain.SeedWork;
 
 namespace Trucks.domain.SeedWork;
 
-public abstract class Entity
+public abstract class Entity : IDomainEventsHolder
 {
     int? _requestedHashCode;
     IdValueObject _Id;
@@ -16,25 +16,24 @@ public abstract class Entity
 
     public Entity(IdValueObject id)
     {
-        _domainEvents = new();
+        _domainEvents = [];
         _Id = id;
     }
 
-    private List<INotification> _domainEvents;
-    public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();
+    private readonly List<IDomainEvent> _domainEvents;
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();
 
-    public void AddDomainEvent(INotification eventItem)
+    public void AddDomainEvent(IDomainEvent eventItem)
     {
-        _domainEvents = _domainEvents ?? new List<INotification>();
         _domainEvents.Add(eventItem);
     }
 
-    public void RemoveDomainEvent(INotification eventItem)
+    public void RemoveDomainEvent(IDomainEvent eventItem)
     {
         _domainEvents?.Remove(eventItem);
     }
 
-    public void ClearDomainEvents()
+    public void ClearDomainEvents() 
     {
         _domainEvents?.Clear();
     }
