@@ -1,4 +1,5 @@
 ﻿using FluentResults;
+using trucks.domain.Events;
 using Trucks.domain.SeedWork;
 using Trucks.domain.Trucks.DbSnapshots;
 
@@ -30,6 +31,7 @@ public class Truck : Entity, IAggregateRoot
             return mergedRes;
 
         var instance = new Truck(truckIdRes.Value, codeRes.Value, nameRes.Value, descriptionRes.Value, status);
+        instance.AddTruckCreateDomainEvent();
 
         return Result.Ok(instance);
     }
@@ -107,6 +109,14 @@ public class Truck : Entity, IAggregateRoot
         Status = result.Value;
 
         return Result.Ok(this);
+    }
+
+    public void AddTruckCreateDomainEvent()
+    {
+        var truckCreated = new TruckCreatedDomainEvent(Id.Value, Code.Value, Name.Value, Description.Value, Status.Id, Status.Name,
+            DateTime.UtcNow);
+
+        AddDomainEvent(truckCreated);
     }
 
     public TruckDbSnapshot ToDbSnapshot() =>
