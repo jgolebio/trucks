@@ -33,7 +33,7 @@ public abstract class Entity : IDomainEventsHolder
         _domainEvents?.Remove(eventItem);
     }
 
-    public void ClearDomainEvents()
+    public void ClearDomainEvents() 
     {
         _domainEvents?.Clear();
     }
