@@ -20,3 +20,11 @@ services:
       dockerfile: services/trucks/trucks.api/Dockerfile
     environment:
       - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+
+  trucks-history.api:
+    image: ${DOCKER_REGISTRY-}truckshistoryapi
+    build:
+      context: .
+      dockerfile: services/trucks-history/trucks-history.api/Dockerfile
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false

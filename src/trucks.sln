@@ -25,9 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.infrastructure.sqlmi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "services\EventBus\EventBus.csproj", "{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "services\EventBus\EventBus.csproj", "{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBusRabbitMQ", "services\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{E0976980-6C96-4CE4-90B0-E09C98B10DDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "services\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{E0976980-6C96-4CE4-90B0-E09C98B10DDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trucks-history", "trucks-history", "{F2DF93CC-45F0-49DE-A4D7-3D8060089404}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks-history.api", "services\trucks-history\trucks-history.api\trucks-history.api.csproj", "{F36BEBF1-CB19-4F45-9124-5781D83D4D32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrucksHistory.Application", "services\trucks-history\TrucksHistory.Application\TrucksHistory.Application.csproj", "{DC7A8073-7EAC-484E-8D8B-D77853C21092}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +77,14 @@ Global
 		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36BEBF1-CB19-4F45-9124-5781D83D4D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36BEBF1-CB19-4F45-9124-5781D83D4D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36BEBF1-CB19-4F45-9124-5781D83D4D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36BEBF1-CB19-4F45-9124-5781D83D4D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +101,9 @@ Global
 		{0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D} = {271BDF39-08BF-4930-AA7B-3F0D03531948}
 		{D3B5085B-FB57-43A0-815C-9DDF3BBF042B} = {0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}
 		{E0976980-6C96-4CE4-90B0-E09C98B10DDE} = {0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}
+		{F2DF93CC-45F0-49DE-A4D7-3D8060089404} = {271BDF39-08BF-4930-AA7B-3F0D03531948}
+		{F36BEBF1-CB19-4F45-9124-5781D83D4D32} = {F2DF93CC-45F0-49DE-A4D7-3D8060089404}
+		{DC7A8073-7EAC-484E-8D8B-D77853C21092} = {F2DF93CC-45F0-49DE-A4D7-3D8060089404}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E990726F-16D7-49CD-A3A5-03D1FF5C27B4}
