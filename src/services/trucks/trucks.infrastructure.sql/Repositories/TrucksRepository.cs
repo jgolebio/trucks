@@ -1,4 +1,4 @@
-﻿ using FluentResults;
+﻿using FluentResults;
 using Microsoft.EntityFrameworkCore;
 using trucks.domain.SeedWork;
 using Trucks.domain.Trucks;
@@ -20,6 +20,8 @@ namespace Trucks.Infrastructure.Sql.Repositories
         public void Add(Truck model)
         {
             _dbContext.Trucks.Add(model.ToDbSnapshot().ToDbModel());
+
+            _dbContext.AddToChangedAggregates(model);
         }
 
         public void Delete(Truck model)
@@ -43,9 +45,25 @@ namespace Trucks.Infrastructure.Sql.Repositories
             }
         }
 
+        public async Task<Result<bool>> IsAnyWithCodeAsync(string code)
+        {
+            try
+            {
+                var anyRes = await _dbContext.Trucks.AnyAsync(x => x.Code == code);
+
+                return Result.Ok(anyRes);
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail(ex.Message);
+            }
+        }
+
         public void Update(Truck model)
         {
             _dbContext.Trucks.Update(model.ToDbSnapshot().ToDbModel());
+
+            _dbContext.AddToChangedAggregates(model);
         }
     }
 }

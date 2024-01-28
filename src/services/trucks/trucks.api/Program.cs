@@ -19,6 +19,7 @@ builder.Services.AddDbContext<TrucksDbContext>(o =>
 });
 builder.Services.ConfigureServices();
 builder.Services.ConfigureDatabaseServices();
+builder.Services.AddEventBus(builder.Configuration);
 
 var app = builder.Build();
 

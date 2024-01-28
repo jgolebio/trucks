@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\EventBusRabbitMQ\EventBusRabbitMQ.csproj" />
     <ProjectReference Include="..\trucks.application\trucks.application.csproj" />
     <ProjectReference Include="..\trucks.infrastructure.sqlmigration\trucks.infrastructure.sqlmigration.csproj" />
     <ProjectReference Include="..\trucks.infrastructure.sql\trucks.infrastructure.sql.csproj" />

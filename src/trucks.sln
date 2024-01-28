@@ -17,11 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.application", "servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.api", "services\trucks\trucks.api\trucks.api.csproj", "{94EB19C5-7050-4DEF-A4C2-7429DB792F0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trucks.infrastructure.sql", "services\trucks\trucks.infrastructure.sql\trucks.infrastructure.sql.csproj", "{4DD87A68-900A-4B92-971E-CD722987C911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.infrastructure.sql", "services\trucks\trucks.infrastructure.sql\trucks.infrastructure.sql.csproj", "{4DD87A68-900A-4B92-971E-CD722987C911}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trucks.infrastructure.sqlmigration", "services\trucks\trucks.infrastructure.sqlmigration\trucks.infrastructure.sqlmigration.csproj", "{4009D461-6C7E-4545-8C8D-17EA99D7FC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.infrastructure.sqlmigration", "services\trucks\trucks.infrastructure.sqlmigration\trucks.infrastructure.sqlmigration.csproj", "{4009D461-6C7E-4545-8C8D-17EA99D7FC08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "services\EventBus\EventBus.csproj", "{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBusRabbitMQ", "services\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{E0976980-6C96-4CE4-90B0-E09C98B10DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +63,14 @@ Global
 		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4009D461-6C7E-4545-8C8D-17EA99D7FC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B5085B-FB57-43A0-815C-9DDF3BBF042B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0976980-6C96-4CE4-90B0-E09C98B10DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +84,9 @@ Global
 		{94EB19C5-7050-4DEF-A4C2-7429DB792F0F} = {511189AD-D929-4815-9D75-6480EB464206}
 		{4DD87A68-900A-4B92-971E-CD722987C911} = {511189AD-D929-4815-9D75-6480EB464206}
 		{4009D461-6C7E-4545-8C8D-17EA99D7FC08} = {511189AD-D929-4815-9D75-6480EB464206}
+		{0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D} = {271BDF39-08BF-4930-AA7B-3F0D03531948}
+		{D3B5085B-FB57-43A0-815C-9DDF3BBF042B} = {0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}
+		{E0976980-6C96-4CE4-90B0-E09C98B10DDE} = {0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E990726F-16D7-49CD-A3A5-03D1FF5C27B4}

@@ -1,4 +1,5 @@
 ﻿using trucks.application.Behaviors;
+using trucks.application.Services;
 using Trucks.application.Commands;
 
 namespace Trucks.api.IoC
@@ -13,6 +14,8 @@ namespace Trucks.api.IoC
 
                 cfg.AddOpenBehavior(typeof(TransactionBehavior<,>));
             });
+
+            services.AddScoped<ITruckUniqueCodeService, TruckUniqueCodeService>();
         }
     }
 }
