@@ -1,0 +1,6 @@
+@trucks_history.api_HostAddress = http://localhost:5257
+
+GET {{trucks_history.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
