@@ -1,6 +1,4 @@
-﻿using trucks.domain.SeedWork;
-
-namespace Trucks.domain.SeedWork;
+﻿namespace Trucks.Domain.SeedWork;
 
 public abstract class Entity : IDomainEventsHolder
 {
@@ -33,7 +31,7 @@ public abstract class Entity : IDomainEventsHolder
         _domainEvents?.Remove(eventItem);
     }
 
-    public void ClearDomainEvents() 
+    public void ClearDomainEvents()
     {
         _domainEvents?.Clear();
     }

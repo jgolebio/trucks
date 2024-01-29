@@ -1,4 +1,4 @@
-﻿namespace trucks.application.Queries;
+﻿namespace Trucks.Application.Queries;
 
 public class TruckQuery
 {

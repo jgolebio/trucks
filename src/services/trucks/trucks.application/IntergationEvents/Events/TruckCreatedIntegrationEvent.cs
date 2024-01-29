@@ -1,6 +1,6 @@
 ﻿using EventBus.Events;
 
-namespace trucks.application.IntergationEvents.Events;
+namespace Trucks.Application.IntergationEvents.Events;
 public record class TruckCreatedIntegrationEvent : IntegrationEvent
 {
     public Guid TruckId { get; }

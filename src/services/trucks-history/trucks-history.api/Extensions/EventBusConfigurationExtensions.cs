@@ -2,7 +2,7 @@
 using TrucksHistory.Application.IntegrationEvents.EventHandlers;
 using TrucksHistory.Application.IntegrationEvents.Events;
 
-namespace trucks_history.api.Extensions;
+namespace TrucksHistory.API.Extensions;
 
 public static class EventBusConfigurationExtensions
 {

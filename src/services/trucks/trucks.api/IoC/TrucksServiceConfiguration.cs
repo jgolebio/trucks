@@ -1,8 +1,8 @@
-﻿using trucks.application.Behaviors;
-using trucks.application.Services;
-using Trucks.application.Commands;
+﻿using Trucks.Application.Behaviors;
+using Trucks.Application.Services;
+using Trucks.Application.Commands;
 
-namespace Trucks.api.IoC
+namespace Trucks.API.IoC
 {
     public static class TrucksServiceConfiguration
     {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Collections.Concurrent;
 using System.Data;
-using trucks.domain.SeedWork;
+using Trucks.Domain.SeedWork;
 using Trucks.Infrastructure.Sql.DbModels;
 using Trucks.Infrastructure.Sql.EntityConfigurations;
 

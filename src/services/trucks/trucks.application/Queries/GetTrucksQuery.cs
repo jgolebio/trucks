@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using MediatR;
 
-namespace trucks.application.Queries;
+namespace Trucks.Application.Queries;
 
 public class GetTrucksQuery : IRequest<Result<GetTrucksQuery.TrucksViewModel>>
 {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Trucks.domain.Trucks.Validators;
+namespace Trucks.Domain.Trucks.Validators;
 
 internal class TruckNameValidator : AbstractValidator<TruckName>
 {

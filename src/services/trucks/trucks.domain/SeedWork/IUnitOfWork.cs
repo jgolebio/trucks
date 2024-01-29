@@ -1,4 +1,4 @@
-﻿namespace trucks.domain.SeedWork;
+﻿namespace Trucks.Domain.SeedWork;
 
 public interface IUnitOfWork : IDisposable
 {

@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using trucks.application.Extensions;
+using Trucks.Application.Extensions;
 using Trucks.Infrastructure.Sql;
 
-namespace trucks.application.Behaviors;
+namespace Trucks.Application.Behaviors;
 
 public class TransactionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : BaseCommand, IRequest<TResponse>
 {

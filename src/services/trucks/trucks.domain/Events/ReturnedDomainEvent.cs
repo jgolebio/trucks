@@ -1,5 +1,5 @@
 ﻿
-namespace trucks.domain.Events;
+namespace Trucks.Domain.Events;
 
 internal record class ReturnedDomainEvent : StatusChangedDomainEvent
 {

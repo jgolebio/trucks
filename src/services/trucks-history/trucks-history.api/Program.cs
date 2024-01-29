@@ -1,5 +1,5 @@
-using trucks_history.api.Extensions;
-using trucks_history.api.IoC;
+using TrucksHistory.API.Extensions;
+using TrucksHistory.API.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 

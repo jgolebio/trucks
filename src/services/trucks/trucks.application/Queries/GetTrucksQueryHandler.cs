@@ -1,9 +1,9 @@
 ﻿using FluentResults;
 using MediatR;
-using trucks.application.Queries.Extensions;
+using Trucks.Application.Queries.Extensions;
 using Trucks.Infrastructure.Sql.Queries;
 
-namespace trucks.application.Queries;
+namespace Trucks.Application.Queries;
 
 public class GetTrucksQueryHandler : IRequestHandler<GetTrucksQuery, Result<GetTrucksQuery.TrucksViewModel>>
 {

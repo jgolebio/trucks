@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using MediatR;
-using Trucks.domain.Trucks;
+using Trucks.Domain.Trucks;
 
-namespace trucks.application.Commands;
+namespace Trucks.Application.Commands;
 
 public class StartLoadingCommandHandler : IRequestHandler<StartLoadingCommand, Result>
 {

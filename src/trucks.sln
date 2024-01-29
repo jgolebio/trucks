@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{27
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trucks", "trucks", "{511189AD-D929-4815-9D75-6480EB464206}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.domain", "services\trucks\trucks.domain\trucks.domain.csproj", "{70183788-4B89-4FCC-BA0B-E415E09DFAAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Domain", "services\trucks\trucks.domain\Trucks.Domain.csproj", "{70183788-4B89-4FCC-BA0B-E415E09DFAAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{30D0AA21-FC51-454F-8739-4B7B8DEED862}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.domain.unittests", "trucks.domain.tests\trucks.domain.unittests.csproj", "{BA09349C-F5A0-42E3-90C3-6C64488389FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.application", "services\trucks\trucks.application\trucks.application.csproj", "{83BA2C78-5E60-4965-A1F8-C15ABA98B8D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Application", "services\trucks\trucks.application\Trucks.Application.csproj", "{83BA2C78-5E60-4965-A1F8-C15ABA98B8D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.api", "services\trucks\trucks.api\trucks.api.csproj", "{94EB19C5-7050-4DEF-A4C2-7429DB792F0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.API", "services\trucks\trucks.api\Trucks.API.csproj", "{94EB19C5-7050-4DEF-A4C2-7429DB792F0F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.infrastructure.sql", "services\trucks\trucks.infrastructure.sql\trucks.infrastructure.sql.csproj", "{4DD87A68-900A-4B92-971E-CD722987C911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Infrastructure.Sql", "services\trucks\trucks.infrastructure.sql\Trucks.Infrastructure.Sql.csproj", "{4DD87A68-900A-4B92-971E-CD722987C911}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}"
 EndProject
@@ -31,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "service
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trucks-history", "trucks-history", "{F2DF93CC-45F0-49DE-A4D7-3D8060089404}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks-history.api", "services\trucks-history\trucks-history.api\trucks-history.api.csproj", "{F36BEBF1-CB19-4F45-9124-5781D83D4D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrucksHistory.API", "services\trucks-history\trucks-history.api\TrucksHistory.API.csproj", "{F36BEBF1-CB19-4F45-9124-5781D83D4D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrucksHistory.Application", "services\trucks-history\TrucksHistory.Application\TrucksHistory.Application.csproj", "{DC7A8073-7EAC-484E-8D8B-D77853C21092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrucksHistory.Application", "services\trucks-history\TrucksHistory.Application\TrucksHistory.Application.csproj", "{DC7A8073-7EAC-484E-8D8B-D77853C21092}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

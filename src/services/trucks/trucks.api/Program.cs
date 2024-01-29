@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using trucks.api.Extensions;
-using trucks.api.IoC;
-using Trucks.api.Apis;
-using Trucks.api.IoC;
+using Trucks.API.Extensions;
+using Trucks.API.IoC;
+using Trucks.API.Apis;
+using Trucks.API.IoC;
 using Trucks.Infrastructure.Sql;
 
 var builder = WebApplication.CreateBuilder(args);

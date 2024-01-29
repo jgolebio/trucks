@@ -1,6 +1,6 @@
 ﻿using TrucksHistory.Application.IntegrationEvents.EventHandlers;
 
-namespace trucks_history.api.Extensions;
+namespace TrucksHistory.API.Extensions;
 
 public static class IntegrationEventHandlersConfigurationExtensions
 {

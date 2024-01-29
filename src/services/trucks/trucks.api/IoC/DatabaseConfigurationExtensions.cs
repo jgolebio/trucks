@@ -1,8 +1,8 @@
-﻿using Trucks.domain.Trucks;
+﻿using Trucks.Domain.Trucks;
 using Trucks.Infrastructure.Sql.Queries;
 using Trucks.Infrastructure.Sql.Repositories;
 
-namespace trucks.api.IoC
+namespace Trucks.API.IoC
 {
     public static class DatabaseConfigurationExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace trucks.domain.SeedWork;
+namespace Trucks.Domain.SeedWork;
 
 public interface IDomainEvent : INotification
 {

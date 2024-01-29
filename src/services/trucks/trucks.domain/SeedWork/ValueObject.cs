@@ -1,4 +1,4 @@
-﻿namespace Trucks.domain.SeedWork;
+﻿namespace Trucks.Domain.SeedWork;
 
 public abstract class ValueObject
 {

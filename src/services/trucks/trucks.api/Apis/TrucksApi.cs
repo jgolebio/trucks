@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using trucks.application.Commands;
-using trucks.application.Queries;
-using Trucks.application.Commands;
+using Trucks.Application.Commands;
+using Trucks.Application.Queries;
+using Trucks.Application.Commands;
 
-namespace Trucks.api.Apis;
+namespace Trucks.API.Apis;
 
 public static class TrucksApi
 {

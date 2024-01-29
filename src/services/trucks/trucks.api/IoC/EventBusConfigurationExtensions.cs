@@ -3,7 +3,7 @@ using EventBus.Abstractions;
 using EventBusRabbitMQ;
 using RabbitMQ.Client;
 
-namespace trucks.api.IoC;
+namespace Trucks.API.IoC;
 
 public static class EventBusConfigurationExtensions
 {

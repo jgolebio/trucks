@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\EventBus\EventBus.csproj" />
-    <ProjectReference Include="..\trucks.domain\trucks.domain.csproj" />
-    <ProjectReference Include="..\trucks.infrastructure.sql\trucks.infrastructure.sql.csproj" />
+    <ProjectReference Include="..\trucks.domain\Trucks.Domain.csproj" />
+    <ProjectReference Include="..\trucks.infrastructure.sql\Trucks.Infrastructure.Sql.csproj" />
   </ItemGroup>
 
 </Project>

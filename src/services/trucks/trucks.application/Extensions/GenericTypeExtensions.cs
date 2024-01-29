@@ -1,4 +1,4 @@
-﻿namespace trucks.application.Extensions;
+﻿namespace Trucks.Application.Extensions;
 
 public static class GenericTypeExtensions
 {

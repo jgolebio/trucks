@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using Microsoft.EntityFrameworkCore;
-using trucks.domain.SeedWork;
-using Trucks.domain.Trucks;
+using Trucks.Domain.SeedWork;
+using Trucks.Domain.Trucks;
 using Trucks.Infrastructure.Sql.DbModels.Converters;
 
 namespace Trucks.Infrastructure.Sql.Repositories
