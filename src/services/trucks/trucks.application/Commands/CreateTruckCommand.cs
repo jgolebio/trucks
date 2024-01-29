@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using MediatR;
-using trucks.application.Behaviors;
+using Trucks.Application.Behaviors;
 
-namespace Trucks.application.Commands;
+namespace Trucks.Application.Commands;
 
 public class CreateTruckCommand : BaseCommand, IRequest<Result<CreateTruckCommand.CreateTruckResult>>
 {

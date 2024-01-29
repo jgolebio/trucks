@@ -1,7 +1,7 @@
 ﻿using FluentResults;
-using trucks.domain.SeedWork;
+using Trucks.Domain.SeedWork;
 
-namespace Trucks.domain.Trucks
+namespace Trucks.Domain.Trucks
 {
     public interface ITrucksRepository : IRepository<Truck>
     {

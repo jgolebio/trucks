@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Trucks.domain.Trucks;
+using Trucks.Domain.Trucks;
 
-namespace trucks.application.Commands;
+namespace Trucks.Application.Commands;
 
 internal class SendToJobCommandHandler : IRequestHandler<SendToJobCommand, Result>
 {

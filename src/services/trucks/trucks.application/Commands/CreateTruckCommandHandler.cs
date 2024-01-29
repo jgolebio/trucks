@@ -1,9 +1,9 @@
 ﻿using FluentResults;
 using MediatR;
-using trucks.application.Services;
-using Trucks.domain.Trucks;
+using Trucks.Application.Services;
+using Trucks.Domain.Trucks;
 
-namespace Trucks.application.Commands
+namespace Trucks.Application.Commands
 {
     public class CreateTruckCommandHandler : IRequestHandler<CreateTruckCommand, Result<CreateTruckCommand.CreateTruckResult>>
     {

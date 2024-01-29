@@ -1,6 +1,6 @@
-﻿using Trucks.domain.SeedWork;
+﻿using Trucks.Domain.SeedWork;
 
-namespace trucks.domain.SeedWork;
+namespace Trucks.Domain.SeedWork;
 
 public interface IRepository<T> where T : IAggregateRoot
 {

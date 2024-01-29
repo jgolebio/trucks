@@ -1,5 +1,5 @@
-﻿using trucks.domain.SeedWork;
+﻿using Trucks.Domain.SeedWork;
 
-namespace trucks.domain.Events;
+namespace Trucks.Domain.Events;
 
 public record class StatusChangedDomainEvent(Guid Id, DateTime EventDate, int StatusId, string Status) : IDomainEvent;

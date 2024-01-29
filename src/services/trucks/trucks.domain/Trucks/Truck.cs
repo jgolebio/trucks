@@ -1,9 +1,9 @@
 ﻿using FluentResults;
-using trucks.domain.Events;
-using Trucks.domain.SeedWork;
-using Trucks.domain.Trucks.DbSnapshots;
+using Trucks.Domain.Events;
+using Trucks.Domain.SeedWork;
+using Trucks.Domain.Trucks.DbSnapshots;
 
-namespace Trucks.domain.Trucks;
+namespace Trucks.Domain.Trucks;
 
 public class Truck : Entity, IAggregateRoot
 {

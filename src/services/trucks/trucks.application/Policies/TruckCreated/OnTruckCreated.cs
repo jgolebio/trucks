@@ -1,10 +1,10 @@
 ﻿using EventBus.Abstractions;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using trucks.application.IntergationEvents.Events;
-using trucks.domain.Events;
+using Trucks.Application.IntergationEvents.Events;
+using Trucks.Domain.Events;
 
-namespace trucks.application.Policies.TruckCreated;
+namespace Trucks.Application.Policies.TruckCreated;
 public class OnTruckCreated : INotificationHandler<TruckCreatedDomainEvent>
 {
     private readonly ILogger<OnTruckCreated> _logger;

@@ -1,8 +1,8 @@
 ﻿using FluentResults;
-using Trucks.domain.SeedWork;
-using Trucks.domain.Trucks.Validators;
+using Trucks.Domain.SeedWork;
+using Trucks.Domain.Trucks.Validators;
 
-namespace Trucks.domain.Trucks;
+namespace Trucks.Domain.Trucks;
 
 public class TruckCode : ValueObject
 {

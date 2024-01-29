@@ -1,4 +1,4 @@
-﻿namespace trucks.domain.Events;
+﻿namespace Trucks.Domain.Events;
 
 public record class LoadingStartedDomainEvent : StatusChangedDomainEvent
 {

@@ -1,4 +1,4 @@
-﻿using Trucks.domain.Trucks.DbSnapshots;
+﻿using Trucks.Domain.Trucks.DbSnapshots;
 
 namespace Trucks.Infrastructure.Sql.DbModels.Converters
 {

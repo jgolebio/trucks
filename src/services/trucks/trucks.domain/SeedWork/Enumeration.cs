@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace Trucks.domain.SeedWork;
+namespace Trucks.Domain.SeedWork;
 
 public abstract class Enumeration : IComparable
 {

@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using MediatR;
-using trucks.application.Behaviors;
+using Trucks.Application.Behaviors;
 
-namespace trucks.application.Commands;
+namespace Trucks.Application.Commands;
 
 public class DeleteTruckCommand : BaseCommand, IRequest<Result>
 {

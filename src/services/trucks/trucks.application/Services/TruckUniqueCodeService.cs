@@ -1,7 +1,7 @@
 ﻿using FluentResults;
-using Trucks.domain.Trucks;
+using Trucks.Domain.Trucks;
 
-namespace trucks.application.Services;
+namespace Trucks.Application.Services;
 public class TruckUniqueCodeService : ITruckUniqueCodeService
 {
     private readonly ITrucksRepository _trucksRepository;

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Polly;
 using Trucks.Infrastructure.Sql;
 
-namespace trucks.api.Extensions
+namespace Trucks.API.Extensions
 {
     public static class DatabaseMigrationExtensions
     {

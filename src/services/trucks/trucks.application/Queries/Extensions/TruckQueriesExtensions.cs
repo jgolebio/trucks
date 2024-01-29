@@ -1,8 +1,8 @@
-﻿using Trucks.domain.SeedWork;
-using Trucks.domain.Trucks;
+﻿using Trucks.Domain.SeedWork;
+using Trucks.Domain.Trucks;
 using Trucks.Infrastructure.Sql.Queries;
 
-namespace trucks.application.Queries.Extensions
+namespace Trucks.Application.Queries.Extensions
 {
     internal static class TruckQueriesExtensions
     {
