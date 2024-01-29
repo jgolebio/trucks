@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Infrastructure.Sql",
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DF910EC2-6651-40D1-B16A-EAA7AFCA6973}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trucks.infrastructure.sqlmigration", "services\trucks\trucks.infrastructure.sqlmigration\trucks.infrastructure.sqlmigration.csproj", "{4009D461-6C7E-4545-8C8D-17EA99D7FC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Infrastructure.SqlMigration", "services\trucks\trucks.infrastructure.sqlmigration\Trucks.Infrastructure.SqlMigration.csproj", "{4009D461-6C7E-4545-8C8D-17EA99D7FC08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{0DA30A88-CA46-44C6-ACE6-F03EB17BAA7D}"
 EndProject

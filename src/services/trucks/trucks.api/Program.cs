@@ -1,12 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using Trucks.API.Extensions;
-using Trucks.API.IoC;
+using Serilog;
 using Trucks.API.Apis;
+using Trucks.API.Extensions;
 using Trucks.API.IoC;
 using Trucks.Infrastructure.Sql;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog((ctx, cfg) =>
+{
+    cfg.ReadFrom.Configuration(ctx.Configuration);
+    cfg.WriteTo.Seq("http://seq");
+});
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
