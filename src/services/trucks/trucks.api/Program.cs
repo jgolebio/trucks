@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TrucksDbContext>(o =>
 {
     o.UseSqlServer(builder.Configuration.GetConnectionString("TrucksDbConnectionString"),
-        sqlServerActions => sqlServerActions.MigrationsAssembly("trucks.infrastructure.sqlmigration"));
+        sqlServerActions => sqlServerActions.MigrationsAssembly("Trucks.Infrastructure.SqlMigration"));
     o.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 builder.Services.ConfigureServices();

@@ -1,3 +1,6 @@
+using TruckHistory.API.Extensions;
+using TrucksHistory.API.IoC;
+using TrucksHistory.API.Apis;
 using TrucksHistory.API.Extensions;
 using TrucksHistory.API.IoC;
 
@@ -9,7 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddEventBus(builder.Configuration);
 builder.Services.AddIntegrationEventHandlers();
-
+builder.Services.AddMediatr();
+builder.Services.AddTrucksHistoryDatabase(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,32 +24,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.ConfigureEventBus();
-
+app.Services.RunDatabaseMigrations();
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+app.MapGroup("api/v1/trucks-history")
+    .MapTrucksHistoryApi();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

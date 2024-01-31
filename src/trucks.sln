@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrucksHistory.API", "servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrucksHistory.Application", "services\trucks-history\TrucksHistory.Application\TrucksHistory.Application.csproj", "{DC7A8073-7EAC-484E-8D8B-D77853C21092}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrucksHistory.Infrastructure.Postgres", "services\trucks-history\TrucksHistory.Infrastructure.Postgres\TrucksHistory.Infrastructure.Postgres.csproj", "{05B94138-2AF9-48E7-9B23-0FF2D1184A83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC7A8073-7EAC-484E-8D8B-D77853C21092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B94138-2AF9-48E7-9B23-0FF2D1184A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B94138-2AF9-48E7-9B23-0FF2D1184A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B94138-2AF9-48E7-9B23-0FF2D1184A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B94138-2AF9-48E7-9B23-0FF2D1184A83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{F2DF93CC-45F0-49DE-A4D7-3D8060089404} = {271BDF39-08BF-4930-AA7B-3F0D03531948}
 		{F36BEBF1-CB19-4F45-9124-5781D83D4D32} = {F2DF93CC-45F0-49DE-A4D7-3D8060089404}
 		{DC7A8073-7EAC-484E-8D8B-D77853C21092} = {F2DF93CC-45F0-49DE-A4D7-3D8060089404}
+		{05B94138-2AF9-48E7-9B23-0FF2D1184A83} = {F2DF93CC-45F0-49DE-A4D7-3D8060089404}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E990726F-16D7-49CD-A3A5-03D1FF5C27B4}
