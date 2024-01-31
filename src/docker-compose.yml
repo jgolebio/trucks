@@ -16,6 +16,16 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "5454:1433"
+  
+  trucks-history.postgres:
+    image: postgres:latest
+    container_name: trucks-history.postgres
+    environment:
+      - POSTGRES_DB=trucks-history
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres 
+    ports:
+      - 5432:5432
 
   trucks.api:
     image: ${DOCKER_REGISTRY-}trucksapi
@@ -24,6 +34,9 @@ services:
       dockerfile: services/trucks/trucks.api/Dockerfile
     environment:
       - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+    ports:
+      -  55001:8080
+      -  55002:8081
 
   trucks-history.api:
     image: ${DOCKER_REGISTRY-}truckshistoryapi
@@ -32,3 +45,6 @@ services:
       dockerfile: services/trucks-history/trucks-history.api/Dockerfile
     environment:
       - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+    ports:
+      -  55003:8080
+      -  55004:8081

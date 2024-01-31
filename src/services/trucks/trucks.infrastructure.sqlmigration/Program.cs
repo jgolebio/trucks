@@ -70,7 +70,7 @@ public class Program
                 {
                     options.UseSqlServer(
                         hostContext.Configuration["TrucksDbConnectionString"],
-                        b => b.MigrationsAssembly("trucks.infrastructure.sqlmigration"));
+                        b => b.MigrationsAssembly("Trucks.Infrastructure.Sql"));
                 });
             });
 

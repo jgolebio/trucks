@@ -16,8 +16,8 @@ services:
       - EventBusUserName=guest
       - EventBusPassword=guest
     ports:
-      - "8080"
-      - "8081"
+      -  "55001:8080"
+      -  "55002:8081"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
@@ -31,8 +31,8 @@ services:
       - EventBusUserName=guest
       - EventBusPassword=guest
     ports:
-      - "8080"
-      - "8081"
+      -  "55003:8080"
+      -  "55004:8081"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
