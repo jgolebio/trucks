@@ -29,4 +29,8 @@
     <ProjectReference Include="..\TrucksHistory.Infrastructure.Postgres\TrucksHistory.Infrastructure.Postgres.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

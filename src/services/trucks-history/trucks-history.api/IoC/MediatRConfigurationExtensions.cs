@@ -1,4 +1,5 @@
-﻿using TrucksHistory.Application.Queries;
+﻿using TrucksHistory.Application.Behaviours;
+using TrucksHistory.Application.Queries;
 
 namespace TrucksHistory.API.IoC;
 
@@ -9,9 +10,10 @@ public static class MediatRConfigurationExtensions
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblyContaining(typeof(GetTrucksQuery));
+
+            cfg.AddOpenBehavior(typeof(TransactionBehavior<,>));
         });
 
         return services;
     }
 }
- 

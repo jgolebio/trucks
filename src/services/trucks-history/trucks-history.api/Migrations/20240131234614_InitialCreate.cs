@@ -12,7 +12,7 @@ namespace trucks_history.api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Trucks",
+                name: "TrucksHistory",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -24,7 +24,7 @@ namespace trucks_history.api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Trucks", x => x.Id);
+                    table.PrimaryKey("PK_TrucksHistory", x => x.Id);
                 });
         }
 
@@ -32,7 +32,7 @@ namespace trucks_history.api.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Trucks");
+                name: "TrucksHistory");
         }
     }
 }

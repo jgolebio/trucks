@@ -22,7 +22,7 @@ namespace trucks_history.api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("TrucksHistory.Infrastructure.Postgres.DbModels.TruckDbModel", b =>
+            modelBuilder.Entity("TrucksHistory.Infrastructure.Postgres.DbModels.TruckHistoryDbModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
@@ -47,7 +47,7 @@ namespace trucks_history.api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Trucks", (string)null);
+                    b.ToTable("TrucksHistory", (string)null);
                 });
 #pragma warning restore 612, 618
         }

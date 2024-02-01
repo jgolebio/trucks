@@ -1,5 +1,5 @@
 ﻿namespace TrucksHistory.Infrastructure.Postgres.DbModels;
-public class TruckDbModel
+public class TruckHistoryDbModel
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = null!;

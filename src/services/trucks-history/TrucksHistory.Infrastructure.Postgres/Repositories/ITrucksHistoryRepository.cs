@@ -3,5 +3,6 @@
 namespace TrucksHistory.Infrastructure.Postgres.Repositories;
 public interface ITrucksHistoryRepository
 {
-    Task<IEnumerable<TruckDbModel>> GetAllAsync();
+    void Add(TruckHistoryDbModel truckHistoryDbModel);
+    Task<IEnumerable<TruckHistoryDbModel>> GetAllAsync();
 }

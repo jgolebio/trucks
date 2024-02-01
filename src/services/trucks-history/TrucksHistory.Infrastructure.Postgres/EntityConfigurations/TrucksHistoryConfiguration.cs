@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TrucksHistory.Infrastructure.Postgres.DbModels;
 
 namespace TrucksHistory.Infrastructure.Postgres.EntityConfigurations;
-public class TrucksConfiguration : IEntityTypeConfiguration<TruckDbModel>
+public class TrucksHistoryConfiguration : IEntityTypeConfiguration<TruckHistoryDbModel>
 {
-    public void Configure(EntityTypeBuilder<TruckDbModel> builder)
+    public void Configure(EntityTypeBuilder<TruckHistoryDbModel> builder)
     {
-        builder.ToTable("Trucks");
+        builder.ToTable("TrucksHistory");
         builder.Property(x => x.Id).ValueGeneratedNever();
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Name).IsRequired();

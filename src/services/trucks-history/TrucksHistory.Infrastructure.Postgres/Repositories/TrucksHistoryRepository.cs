@@ -11,6 +11,9 @@ public class TrucksHistoryRepository : ITrucksHistoryRepository
         _dbContext = dbContext;
     }
 
-    public async Task<IEnumerable<TruckDbModel>> GetAllAsync() =>
+    public void Add(TruckHistoryDbModel truckHistoryDbModel) =>
+        _dbContext.Trucks.Add(truckHistoryDbModel);
+
+    public async Task<IEnumerable<TruckHistoryDbModel>> GetAllAsync() =>
         await _dbContext.Trucks.ToListAsync();
 }
