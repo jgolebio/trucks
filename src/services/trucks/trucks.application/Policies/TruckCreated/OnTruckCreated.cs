@@ -23,7 +23,6 @@ public class OnTruckCreated : INotificationHandler<TruckCreatedDomainEvent>
         var integrationEvent = new TruckCreatedIntegrationEvent(intergationEventId, DateTime.UtcNow, notification.Id,
             notification.Code, notification.Name, notification.StatusId, notification.Status);
 
-
         try
         {
             _eventBus.Publish(integrationEvent);

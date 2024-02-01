@@ -16,4 +16,10 @@ public class TrucksHistoryRepository : ITrucksHistoryRepository
 
     public async Task<IEnumerable<TruckHistoryDbModel>> GetAllAsync() =>
         await _dbContext.Trucks.ToListAsync();
+
+    public async Task<TruckHistoryDbModel?> FindByIdAsync(Guid id) =>
+        await _dbContext.Trucks.FirstOrDefaultAsync(x => x.Id == id);
+
+    public void UpdateDbModel(TruckHistoryDbModel dbModel) =>
+        _dbContext.Trucks.Update(dbModel);
 }

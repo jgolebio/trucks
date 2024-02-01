@@ -53,6 +53,8 @@ public class Truck : Entity, IAggregateRoot
         Name = nameRes.Value;
         Description = descriptionRes.Value;
 
+        PublishTruckUpdatedDomainEvent(DateTime.UtcNow);
+
         return Result.Ok(this);
     }
 
@@ -138,6 +140,9 @@ public class Truck : Entity, IAggregateRoot
 
     public void PublishOutOfServiceDomainEvent(DateTime eventDate) =>
         AddDomainEvent(new WentOutOfServiceDomainEvent(Id.Value, eventDate, Status.Id, Status.Name));
+
+    public void PublishTruckUpdatedDomainEvent(DateTime updateDate) =>
+        AddDomainEvent(new TruckUpdatedDomainEvent(Id.Value, Code.Value, Name.Value, updateDate));
 
     public TruckDbSnapshot ToDbSnapshot() =>
         new TruckDbSnapshot(Id.Value, Code.Value, Name.Value, Description.Value, Status.Id);

@@ -10,5 +10,6 @@ public static class EventBusConfigurationExtensions
     {
         var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
         eventBus.Subscribe<TruckCreatedIntegrationEvent, TruckCreatedIntegrationEventHandler>();
+        eventBus.Subscribe<TruckUpdateIntegrationEvent, TruckUpdateIntegrationEventHandler>();
     }
 }

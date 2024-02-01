@@ -16,4 +16,4 @@ public static class MediatRConfigurationExtensions
 
         return services;
     }
-}
+} 
