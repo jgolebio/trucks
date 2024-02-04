@@ -14,6 +14,7 @@ public class TrucksHistoryConfiguration : IEntityTypeConfiguration<TruckHistoryD
         builder.Property(x => x.Code).IsRequired();
         builder.Property(x => x.CreateDate).IsRequired();
         builder.Property(x => x.Status).IsRequired();
-        builder.Property(x=>x.StatusCode).IsRequired();
+        builder.Property(x => x.StatusCode).IsRequired();
+        builder.HasMany(x => x.Entries).WithOne(x => x.TruckHistory).HasForeignKey(x => x.TruckId);
     }
 }

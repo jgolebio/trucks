@@ -26,11 +26,40 @@ namespace trucks_history.api.Migrations
                 {
                     table.PrimaryKey("PK_TrucksHistory", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "TruckHistoryEntries",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    EntryDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Status = table.Column<string>(type: "text", nullable: false),
+                    StatusCode = table.Column<int>(type: "integer", nullable: false),
+                    TruckId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TruckHistoryEntries", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TruckHistoryEntries_TrucksHistory_TruckId",
+                        column: x => x.TruckId,
+                        principalTable: "TrucksHistory",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TruckHistoryEntries_TruckId",
+                table: "TruckHistoryEntries",
+                column: "TruckId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "TruckHistoryEntries");
+
             migrationBuilder.DropTable(
                 name: "TrucksHistory");
         }

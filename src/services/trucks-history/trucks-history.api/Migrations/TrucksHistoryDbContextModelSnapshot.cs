@@ -49,6 +49,48 @@ namespace trucks_history.api.Migrations
 
                     b.ToTable("TrucksHistory", (string)null);
                 });
+
+            modelBuilder.Entity("TrucksHistory.Infrastructure.Postgres.DbModels.TruckHistoryEntryDbModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("StatusCode")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("TruckId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TruckId");
+
+                    b.ToTable("TruckHistoryEntries");
+                });
+
+            modelBuilder.Entity("TrucksHistory.Infrastructure.Postgres.DbModels.TruckHistoryEntryDbModel", b =>
+                {
+                    b.HasOne("TrucksHistory.Infrastructure.Postgres.DbModels.TruckHistoryDbModel", "TruckHistory")
+                        .WithMany("Entries")
+                        .HasForeignKey("TruckId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TruckHistory");
+                });
+
+            modelBuilder.Entity("TrucksHistory.Infrastructure.Postgres.DbModels.TruckHistoryDbModel", b =>
+                {
+                    b.Navigation("Entries");
+                });
 #pragma warning restore 612, 618
         }
     }

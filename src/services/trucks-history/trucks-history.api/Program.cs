@@ -3,6 +3,7 @@ using TrucksHistory.API.IoC;
 using TrucksHistory.API.Apis;
 using TrucksHistory.API.Extensions;
 using TrucksHistory.API.IoC;
+using trucks_history.api.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 

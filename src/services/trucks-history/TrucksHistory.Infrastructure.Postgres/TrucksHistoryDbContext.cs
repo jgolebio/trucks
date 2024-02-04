@@ -7,7 +7,9 @@ using TrucksHistory.Infrastructure.Postgres.EntityConfigurations;
 namespace TrucksHistory.Infrastructure.Postgres;
 public class TrucksHistoryDbContext : DbContext
 {
-    public DbSet<TruckHistoryDbModel> Trucks { get; set; }
+    public DbSet<TruckHistoryDbModel> TrucksHistory { get; set; }
+    public DbSet<TruckHistoryEntryDbModel> TruckHistoryEntries { get; set; }
+
     private IDbContextTransaction _currentTransaction = null!;
     public bool HasActiveTransaction => _currentTransaction is not null;
     public TrucksHistoryDbContext(DbContextOptions<TrucksHistoryDbContext> options) : base(options)

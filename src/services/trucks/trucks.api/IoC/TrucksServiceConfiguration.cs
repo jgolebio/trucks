@@ -1,6 +1,7 @@
 ﻿using Trucks.Application.Behaviors;
 using Trucks.Application.Services;
 using Trucks.Application.Commands;
+using Azure.Messaging;
 
 namespace Trucks.API.IoC
 {

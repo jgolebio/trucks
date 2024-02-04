@@ -5,6 +5,7 @@ using TrucksHistory.Application.Commands;
 using TrucksHistory.Application.IntegrationEvents.Events;
 
 namespace TrucksHistory.Application.IntegrationEvents.EventHandlers;
+
 public class TruckUpdateIntegrationEventHandler : IIntegrationEventHandler<TruckUpdateIntegrationEvent>
 {
     private readonly ILogger<TruckUpdateIntegrationEventHandler> _logger;

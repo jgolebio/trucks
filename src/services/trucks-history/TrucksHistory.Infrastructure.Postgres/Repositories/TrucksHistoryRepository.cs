@@ -12,14 +12,16 @@ public class TrucksHistoryRepository : ITrucksHistoryRepository
     }
 
     public void Add(TruckHistoryDbModel truckHistoryDbModel) =>
-        _dbContext.Trucks.Add(truckHistoryDbModel);
+        _dbContext.TrucksHistory.Add(truckHistoryDbModel);
 
     public async Task<IEnumerable<TruckHistoryDbModel>> GetAllAsync() =>
-        await _dbContext.Trucks.ToListAsync();
+        await _dbContext.TrucksHistory.ToListAsync();
 
     public async Task<TruckHistoryDbModel?> FindByIdAsync(Guid id) =>
-        await _dbContext.Trucks.FirstOrDefaultAsync(x => x.Id == id);
+        await _dbContext.TrucksHistory
+            .Include(x => x.Entries)
+            .FirstOrDefaultAsync(x => x.Id == id);
 
     public void UpdateDbModel(TruckHistoryDbModel dbModel) =>
-        _dbContext.Trucks.Update(dbModel);
+        _dbContext.TrucksHistory.Update(dbModel);
 }

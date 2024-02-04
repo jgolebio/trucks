@@ -7,4 +7,5 @@ public class TruckHistoryDbModel
     public DateTime CreateDate { get; set; }
     public string Status { get; set; } = null!;
     public int StatusCode { get; set; }
+    public ICollection<TruckHistoryEntryDbModel> Entries { get; set; } = null!;
 }
